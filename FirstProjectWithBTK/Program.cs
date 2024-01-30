@@ -1,10 +1,136 @@
-﻿internal class Program
+﻿using System.Threading.Channels;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        
+
+
 
         Console.ReadKey();
+    }
+
+    private static void KarakterYorumlama()
+    {
+        var k = (char)Console.Read();
+        if (char.IsDigit(k))
+        {
+            Console.WriteLine("Rakamdır!");
+        }
+        else if (char.IsLower(k))
+        {
+            Console.WriteLine("Küçük Karakter.");
+        }
+        else if (char.IsUpper(k))
+        {
+            Console.WriteLine("Büyük Karakter.");
+        }
+        else
+        {
+            Console.WriteLine("Bilinmeyen Karakter!");
+        }
+    }
+
+    private static void MutlakDegerHesaplama()
+    {
+        int n = Convert.ToInt32(Console.ReadLine());
+        if (n < 0)
+        {
+            Console.WriteLine($"|{n}| = {n * -1} ");
+        }
+        else
+        {
+            Console.WriteLine($"|{n}| = {n} ");
+        }
+    }
+
+    private static void TekmiCiftmi()
+    {
+        // Tek mi Çift mi?
+        Console.WriteLine("Bir Sayı Giriniz: ");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+        if (sayi % 2 == 0)
+        {
+            Console.WriteLine($"{sayi} çift bir sayıdır.");
+        }
+        else
+        {
+            Console.WriteLine($"{sayi} tek bir sayıdır.");
+        }
+    }
+
+    private static void Operatorler()
+    {
+        double A = 20, B = 25;
+
+
+        //Aritmetik Operatörler
+        //Console.WriteLine(A + B);
+        //Console.WriteLine(A - B);
+        //Console.WriteLine(A * B);
+        //Console.WriteLine(A / B);
+        //Console.WriteLine(A % B);
+
+        //İlişkisel Operatörler
+        //Console.WriteLine(A > B);
+        //Console.WriteLine(A < B);
+        //Console.WriteLine(A >= B);
+        //Console.WriteLine(A <= B);
+        //Console.WriteLine(A == B);
+        //Console.WriteLine(A != B);
+
+        // Koşul Operatörleri ( && ve, || veya, ! not)
+        //Console.WriteLine(A > B && A < 5);
+        //Console.WriteLine(!(A > B && A < 5));
+        //Console.WriteLine(A < B || B > 5);
+
+    }
+
+    private static void YazdirmaMetoduSecenekleri()
+    {
+        string ifade = " Merhaba programlama dünyası . ";
+        Console.WriteLine(ifade);
+        Console.WriteLine(ifade.Length);
+        Console.WriteLine(ifade.ToUpper());
+        Console.WriteLine(ifade.ToLower());
+        Console.WriteLine(ifade.TrimStart());
+        Console.WriteLine(ifade.TrimEnd());
+        Console.WriteLine(ifade[0]);
+        Console.WriteLine(ifade[1]);
+        Console.WriteLine(ifade[ifade.Length - 1]);
+    }
+
+    private static void OrtuluDegisken()
+    {
+        // örtülü değişken (var)
+        var ifade = Console.ReadKey();
+        Console.WriteLine(ifade.Key);
+        Console.WriteLine(ifade.KeyChar);
+    }
+
+    private static void KacisIfadeleri()
+    {
+        string ifade = "\nBTK \nAkademi \nProgramlama \nOgreniyorum.";
+        Console.WriteLine(ifade);
+        ifade = "\tBTK \tAkademi \tProgramlama \tOgreniyorum.";
+        Console.WriteLine(ifade);
+        ifade = "\aBTK Akademi Programlama Ogreniyorum.";
+        Console.WriteLine(ifade);
+        ifade = "C:\\user\\Salimcan";   /* \ kaçış ifadesi olduğu için 
+                                         * hatalı olmaması için \\ şeklinde yazılır. */
+        Console.WriteLine(ifade);
+        ifade = @"C:\user\Salimcan";    /* Veya başına @ yazılarakta kaçış ifadelerini 
+                                         pas geçirebiliriz. \t \a \n hepsinde işe yarar.*/
+        Console.WriteLine(ifade);
+    }
+
+    private static void BasicExamples()
+    {
+        int sayi = 3;
+        Console.WriteLine(sayi);      // açıklama
+        Console.WriteLine(sayi * 2);  /* açıklama */
+        Console.WriteLine(sayi + 2);
+        Console.WriteLine(sayi - 2);
     }
 
     private static void DegiskenOrnekleri()
