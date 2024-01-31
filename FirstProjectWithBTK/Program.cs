@@ -1,4 +1,4 @@
-﻿using System.Threading.Channels;
+﻿using System.Collections;
 
 internal class Program
 {
@@ -9,6 +9,139 @@ internal class Program
 
 
         Console.ReadKey();
+    }
+
+    private static void Listeler()
+    {
+        // tanımlama
+        var sayilar = new List<int>();
+        int x = 22;
+        int[] Seri = { 1, 2, 3 };
+        // ekleme
+        sayilar.Add(1);
+        sayilar.Add(10);
+        sayilar.Add(20);
+        sayilar.Add(x);
+        sayilar.AddRange(Seri);
+        sayilar.AddRange(new int[] { 21, 55, 43 });
+
+        // Araya ekleme
+        sayilar.Insert(3, 0);
+        sayilar.InsertRange(4, new int[] { 94, 73, 99 });
+
+        sayilar.RemoveAt(3);
+        sayilar.RemoveAt(sayilar.IndexOf(99));
+
+        // dolaşma
+        foreach (var item in sayilar)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    private static void ArrayListExamples()
+    {
+        ////Tanımlama
+        //ArrayList arrayList = new ArrayList();
+        ////Ekleme
+        //arrayList.Add(10);
+        //arrayList.Add("Salim Can");
+        //arrayList.Add(true);
+        //arrayList.Add('s');
+        ////Dolaşma
+        //foreach (var item in arrayList)
+        //    Console.WriteLine(item);
+
+        // Tanımlama + Ekleme
+        var arraysList = new ArrayList()
+        {
+            10,"Salimcan",true,DateTime.Now,'M'
+        };
+        int[] sayilar = { 1, 22, 5, 2222 };
+        arraysList.AddRange(sayilar);
+        //foreach (var item in arraysList)
+        //    Console.WriteLine(item);
+
+        ////Elemana erişme
+        //Console.WriteLine(arraysList[6]);
+
+        //// Elemana erişme - atama
+        //int x = (int)arraysList[0]; //unboxing - kutudan çıkartma
+        //Console.WriteLine(x+10);
+        //Console.WriteLine();
+
+        // eleman silme
+        //arraysList.Remove(10);
+        //arraysList.RemoveAt(0);
+        arraysList.RemoveRange(3, 3);
+        foreach (var item in arraysList)
+            Console.WriteLine(item);
+    }
+
+    private static void Diziler()
+    {
+        // dizi tanımlama
+        int[] aaa;
+        // diziyi başlatma
+        aaa = new int[4];
+        // diziye eleman atama
+        aaa[0] = 1;
+        // dizi tanımlama + başlatma
+        int[] bbb = new int[4];
+        // dizi tanımlama && başlatma && atama
+        int[] bbbb = new int[6] { 1, 2, 3, 4, 8, 12 };
+        // daha kısa
+        int[] numaralar = { 2, 5, 41, 332, 56, 15 };
+        char[] harfler = {'a', 'b', 'c', 'd'};
+
+        for (int i = 0; i < numaralar.Length; i++)
+        {
+            Console.WriteLine($"Numaralar[{i}] = {numaralar[i]}");
+        }
+        for (int i = 0; i < harfler.Length; i++)
+        {
+            Console.WriteLine(harfler[i]);
+        }
+
+
+        // 
+        Console.WriteLine("Dizi boyutunu giriniz: ");
+        int boyut = Convert.ToInt32(Console.ReadLine());
+        int[] sayilar = new int[boyut];
+        var r = new Random();
+        for (int i = 0; i < sayilar.Length; i++)
+            sayilar[i] = r.Next(1, 10);
+
+        foreach (int S in sayilar)
+        {
+            Console.WriteLine($"{S,5} {S * S,5}");
+        }
+
+
+         //
+        double[,] matris = new double[,] { { 1, 2, 4 }, { 5, 7, 8 }, { 6, 11, 22 } };
+        double toplam = 0;
+        for (int i = 0; i < matris.GetLength(0); i++)
+        {
+            for (int j = 0; j < matris.GetLength(1); j++)
+            {
+                if (i == j)
+                    matris[i, j] = 1;
+                if (matris[i, j] % 2 == 0)
+                    matris[i, j] = 0;
+
+                toplam += matris[i, j];
+
+                Console.Write($"{matris[i, j],5}");
+            }
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Toplam = " + toplam);
+
+
+
+
     }
 
     private static void ForDonguleri()
