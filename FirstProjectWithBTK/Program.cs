@@ -2,13 +2,191 @@
 
 internal class Program
 {
+
+    
     private static void Main(string[] args)
     {
 
-        //Git name and email changed.
 
         Console.ReadKey();
     }
+
+    private static void ForDonguleri()
+    {
+
+        /*
+        // for tab tab
+        for (int i = 0; i < 100; i+=5)
+        {
+            Console.WriteLine(i);
+        }
+
+        // forr tab tab
+        for (int i = 100; i >= 0; i -= 5)
+        {
+            Console.WriteLine(i);
+        }
+        */
+        //Console.WriteLine("i değeri için atama yapınız: ");
+        //int a = Convert.ToInt32(Console.ReadLine());
+        //Console.WriteLine("i değeri için sınrlandırma ataması yapınız: ");
+        //int b = Convert.ToInt32(Console.ReadLine());
+        //Console.WriteLine("Gerekli işlemler yapılıyor...");
+        //for (int i = a; i<b; i++) 
+        //{
+        //    //if (i%3 == 0)   /*Bu yapıda şu oluyor: eğer sayımız 3 ün katı ise alttaki kod çalışmadan direkt tekrar 
+        //    //                 üste çıkar ve i nin değerini arttırır. böylece 3 ün katı olanları yazdırmak yerine bir üstüne geçer.*/
+        //    //{
+        //    //    continue;
+        //    //}
+        //    if (i==100)
+        //    {
+        //        break;
+        //    }
+        //    Console.WriteLine("{0,3}",i);
+        //}
+
+        /* iç içe for döngüleri, matrisler 
+          
+         Console.WriteLine("İstenen Değeri Giriniz: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        for (int i = 0; i < n; i++)
+        {
+            //for (int j = 0; j <= n; j++)
+            for (int j = 0; j <= i; j++)
+            {
+                Console.Write(" * ");
+                //Console.Write( $" {i+1},{j+1} " );
+            }
+            Console.WriteLine();
+        
+         */
+
+        // For ile örnek:
+        /*
+        Console.WriteLine("Döngü için Başlangıç Değeri Giriniz: ");
+        int baslangic = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Döngü için Sınır Değeri Giriniz: ");
+        int sinir = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = baslangic; i <= sinir; i++)
+        {
+            if (i%3 == 0)
+            {
+                Console.WriteLine("{0} değeri 3 e tam bölünür.",i);
+            }
+            else if (i%3 == 1)
+            {
+                Console.WriteLine("{0} değerinin 3 e bölümündan kalan 1 dir.",i);
+            }
+            else if (i%3 == 2)
+            {
+                Console.WriteLine("{0} değerinin 3 e bölümünden kalan 1 dir.",i);
+            }
+            else 
+            {
+                Console.WriteLine(i); 
+            }
+        }
+        */
+    }
+
+    private static void DoWhile()
+    {
+        Console.WriteLine("Lütfen bir sayı giriniz: ");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Girilen sayı = {sayi} \nGerekli işlemler aşağıda yapılıyor...");
+
+        int i = 2;
+        do
+        {
+            Console.Write("{0,3}", i);
+            Console.WriteLine(i);
+            i += 2;
+        } while (i <= sayi);
+    }
+
+    private static void While()
+    {
+
+        //int sayac = 10;
+        //while (sayac > 0)
+        //{
+        //    //Console.Write(sayac+ " ");
+        //    //Console.Write("{0,-4}", sayac);    /* Burada sayıları sola yaslayarak aralarında 3 boşluk, 4. ye de kendisi
+        //    //                                     gelicek şekilde sıralarız. aradaki boşlukları - olduğu için sağa koyar.*/
+
+
+        //    //Console.Write("{0,3}", sayac);       /* Burada sayıları sağa yaslayarak aralarında 3 boşluk, 4. ye de kendisi
+        //    //                                     gelicek şekilde sıralarız. aradaki boşlukları - olduğu için Sola koyar.*/
+
+        //    //Console.WriteLine(sayac);
+        //    Console.WriteLine("{0,3} {1,-3}", sayac, sayac * sayac);
+        //    sayac -= 1; /*  sayac ++ =>  sayac = sayac +1 
+        //                 sayac += =>  sayac = sayac +1
+        //                 Bu şekilde kolayca arttırabiliriz.
+        //              */
+        //}
+
+
+        //int a = 1;
+        //int i = 1;
+        //int sayac = 0;
+        //while (i < 10)
+        //{
+        //    sayac++;
+        //    Console.WriteLine($"{sayac}. Çıktının değeri {a * 3}");
+        //    a++;
+        //}
+        // breakpoint koyup incelerken DEBUG =>  WİNDOWS => LOCALS ile değişkenlerin değerlerini takip edebilirsin.
+    }
+
+    private static void SwitchCase()
+    {
+    //    enum Islemler => Burası main metoduna yazılmaz main den çıkıp tanımlıyoruz.
+    //{
+    //    Toplama = 1,
+    //    Cikarma = 2,
+    //    Carpma = 3,
+    //    Bolme = 4
+    //}
+
+    //int A = 10, B = 20;
+    ////Islemler secim = Islemler.Bolme;
+    ////Islemler secim = (Islemler)1;
+    //Islemler secim = (Islemler)(new Random().Next(1, 4));
+    //switch (secim)
+    //{
+    //    case Islemler.Toplama:
+    //        Console.WriteLine($"{A} +  {B} = {A + B}");
+    //        break;
+    //    case Islemler.Cikarma:
+    //        Console.WriteLine($"{A} -  {B} = {A - B}");
+    //        break;
+    //    case Islemler.Carpma:
+    //        Console.WriteLine($"{A} *  {B} = {A * B}");
+    //        break;
+    //    case Islemler.Bolme:
+    //        Console.WriteLine($"{A} /  {B} = {A / B}");
+    //        break;
+    //    default:
+    //        break;
+    //}
+
+    //var K = 'c';
+    //switch (K)
+    //{
+    //    case 'a':
+    //        break;
+    //        Console.WriteLine("A");
+    //    case 'b':
+    //        break;
+    //        Console.WriteLine("B");
+    //    case 'c':
+    //        Console.WriteLine("C");
+    //        break;
+    //}
+}
 
     private static void KarakterYorumlama()
     {
@@ -61,7 +239,7 @@ internal class Program
 
     private static void Operatorler()
     {
-        double A = 20, B = 25;
+        //double A = 20, B = 25;
 
 
         //Aritmetik Operatörler
