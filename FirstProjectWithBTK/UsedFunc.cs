@@ -1,8 +1,74 @@
 ﻿
 
 
+using System.Collections;
+
 internal class UsedFunc 
 {
+    private static void MinMaxTypesValues()
+    {
+        // 8-bit integer
+        Console.WriteLine(nameof(SByte));
+        Console.WriteLine(SByte.MinValue);
+        Console.WriteLine(SByte.MaxValue);
+        Console.WriteLine(sizeof(SByte));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+
+        // Unsigned 8-bit integer
+        Console.WriteLine(nameof(Byte));
+        Console.WriteLine(Byte.MinValue);
+        Console.WriteLine(Byte.MaxValue);
+        Console.WriteLine(sizeof(Byte));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+
+        // 16-bit integer
+        Console.WriteLine(nameof(Int16));
+        Console.WriteLine(Int16.MinValue);
+        Console.WriteLine(Int16.MaxValue);
+        Console.WriteLine(sizeof(Int16));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+        // Unsigned Int16 işaretsiz
+        Console.WriteLine(nameof(UInt16));
+        Console.WriteLine(UInt16.MinValue);
+        Console.WriteLine(UInt16.MaxValue);
+        Console.WriteLine(sizeof(UInt16));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+
+        // Signed Int32
+        Console.WriteLine(nameof(Int32));
+        Console.WriteLine(Int32.MinValue);
+        Console.WriteLine(Int32.MaxValue);
+        Console.WriteLine(sizeof(Int32));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+
+        // Unsigned Int32
+        Console.WriteLine(nameof(UInt32));
+        Console.WriteLine(UInt32.MinValue);
+        Console.WriteLine(UInt32.MaxValue);
+        Console.WriteLine(sizeof(UInt32));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+
+
+        // Double
+        Console.WriteLine(nameof(Double));
+        Console.WriteLine(Double.MinValue);
+        Console.WriteLine(Double.MaxValue);
+        Console.WriteLine(sizeof(Double));
+        Console.WriteLine(new string('-', 10));
+        Console.ReadKey();
+    }
+
     private static void StructandClassRefandValue()
     {
         //Class ile örnek
@@ -212,9 +278,6 @@ internal class UsedFunc
         //public static double KareAl(double A)
         //{
         //    /* bunlar main e 
-        //     * //int buyuk = Karsilastir(13, 6);
-        //    Console.WriteLine(buyuk);
-        //    Console.WriteLine("Metod Bitti. ");
         //    var x = KareAl(5);
         //    double y = KareAl(x);
         //    Console.WriteLine(x);
@@ -282,41 +345,41 @@ internal class UsedFunc
     }
     private static void ArrayListExamples()
     {
-        ////Tanımlama
-        //ArrayList arrayList = new ArrayList();
-        ////Ekleme
-        //arrayList.Add(10);
-        //arrayList.Add("Salim Can");
-        //arrayList.Add(true);
-        //arrayList.Add('s');
-        ////Dolaşma
-        //foreach (var item in arrayList)
-        //    Console.WriteLine(item);
+        //Tanımlama
+        ArrayList arrayList = new ArrayList();
+        //Ekleme
+        arrayList.Add(10);
+        arrayList.Add("Salim Can");
+        arrayList.Add(true);
+        arrayList.Add('s');
+        //Dolaşma
+        foreach (var item in arrayList)
+            Console.WriteLine(item);
 
-        // Tanımlama + Ekleme
-        //var arraysList = new ArrayList()
-        //{
-        //    10,"Salimcan",true,DateTime.Now,'M'
-        //};
-        //int[] sayilar = { 1, 22, 5, 2222 };
-        //arraysList.AddRange(sayilar);
-        //foreach (var item in arraysList)
-        //    Console.WriteLine(item);
+        //Tanımlama + Ekleme
+        var arraysList = new ArrayList()
+        {
+            10,"Salimcan",true,DateTime.Now,'M'
+        };
+        int[] sayilar = { 1, 22, 5, 2222 };
+        arraysList.AddRange(sayilar);
+        foreach (var item in arraysList)
+            Console.WriteLine(item);
 
-        ////Elemana erişme
-        //Console.WriteLine(arraysList[6]);
+        //Elemana erişme
+        Console.WriteLine(arraysList[6]);
 
-        //// Elemana erişme - atama
-        //int x = (int)arraysList[0]; //unboxing - kutudan çıkartma
-        //Console.WriteLine(x+10);
-        //Console.WriteLine();
+        // Elemana erişme - atama
+        int x = (int)arraysList[0]; //unboxing - kutudan çıkartma
+        Console.WriteLine(x + 10);
+        Console.WriteLine();
 
-        // eleman silme
-        //arraysList.Remove(10);
-        //arraysList.RemoveAt(0);
-        //arraysList.RemoveRange(3, 3);
-        //foreach (var item in arraysList)
-        //    Console.WriteLine(item);
+        //eleman silme
+        arraysList.Remove(10);
+        arraysList.RemoveAt(0);
+        arraysList.RemoveRange(3, 3);
+        foreach (var item in arraysList)
+            Console.WriteLine(item);
     }
     private static void Diziler()
     {
