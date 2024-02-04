@@ -10,6 +10,5 @@ namespace VeriYapilarinaGiris2
             Console.ReadKey();
         }
 
-       
     }
 }
