@@ -13,6 +13,197 @@ namespace VeriYapilarinaGiris2
             Console.ReadKey();
         }
 
+        private static void HashSetApp()
+        {
+            // HashSet
+
+            // Tanımlama
+            var sesliHarf = new HashSet<char>()
+            {
+                'e','ı','i','u','ü','o','ö','b'
+            };
+            sesliHarf.Add('a');
+
+            sesliHarf.Remove('b');
+            KoleksiyonYazdir(sesliHarf);
+            //Console.WriteLine();
+            //foreach (char k in sesliHarf)
+            //{
+            //    Console.Write($"{k,5}");
+            //}
+            //Console.WriteLine("Eleman Sayısı: {0}",sesliHarf.Count);
+            //Console.WriteLine();
+
+            var alfabe = new List<char>();
+            for (int i = 97; i < 122; i++)
+            {
+                alfabe.Add((char)i);
+            }
+            alfabe.ForEach(x => { Console.WriteLine(" " + x + "  Listeye eklendi"); });
+            //foreach (var h in alfabe)
+            //{
+            //    Console.WriteLine($"{h,3} Alfabeye eklendi.");
+            //}
+            KoleksiyonYazdir(alfabe);
+
+            // Türkçe de kullanılan sesli harfler
+            sesliHarf.ExceptWith(alfabe);
+            KoleksiyonYazdir(sesliHarf);
+
+            sesliHarf.UnionWith(alfabe);
+            KoleksiyonYazdir(sesliHarf);
+
+            sesliHarf.IntersectWith(alfabe);
+            KoleksiyonYazdir(sesliHarf);
+        }
+
+        static void KoleksiyonYazdir(IEnumerable koleksiyon)
+        {
+            Console.WriteLine();
+            foreach (char k in koleksiyon)
+            {
+                Console.Write($"{k,5}");
+            }
+            //Console.WriteLine("\nEleman Sayısı: {0}", koleksiyon.Count);
+            Console.WriteLine();
+        }
+
+        private static void SortedSetApp2()
+        {
+            // SortedSet Küme İşlemi
+
+            var A = new SortedSet<int>() { 1, 2, 3, 4 };
+            //var A = new SortedSet<int>(RastgeleSayiUret(100));
+            var B = new SortedSet<int>() { 1, 2, 5, 6 };
+            //var B = new SortedSet<int>(RastgeleSayiUret(100));
+
+
+            #region yazdirma
+            Console.WriteLine();
+            Console.WriteLine("A Kümesi: ");
+            foreach (var s in A)
+            {
+                Console.Write($"{s,5}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("B Kümesi: ");
+            foreach (var s in B)
+            {
+                Console.Write($"{s,5}");
+            }
+            #endregion
+
+            // Union
+
+            // A.UnionWith(B) => A ile B nin birleşimi
+            // A.IntersectWith(B); => A ile B nin Kesişimi
+            // A.ExceptWith(B); => Sadece A da bulunanlar
+            // A.SymmetricExceptWith(B); => Sadece A da bulunanlar hariç diğerleri
+            //A.IsSubsetOf(B); => A, B nin alt kümesi mi ?
+            Console.WriteLine();
+            Console.WriteLine("A ve B kümesinin birleşimi: ");
+            foreach (var item in A)
+            {
+                Console.Write($"{item,5}");
+            }
+            Console.WriteLine();
+            //Console.WriteLine("Birleşim kümesinin eleman sayısı = {0}",A.Count);
+            //Console.WriteLine("Kesişim kümesinin eleman sayısı = {0}", A.Count);
+            //Console.WriteLine("Sadece A kümesinin eleman sayısı = {0}", A.Count);
+            //Console.WriteLine("Sadece A kümesinin elemanları hariç toplam eleman sayısı = {0}", A.Count);
+
+
+
+
+            //static List<int> RastgeleSayiUret(int n)
+            //{
+            //    var list = new List<int>();
+            //    var r = new Random();
+            //    for (int i = 0; i < n; i++)
+            //        list.Add(r.Next(0, 1000));
+            //    return list;
+            //}
+
+        }
+
+        private static void SortedSetUygulama()
+        {
+
+            // SortedSet
+
+            var sayilar = new List<int>();
+            var r = new Random();
+
+            for (int i = 0; i < 100; i++)
+            {
+                sayilar.Add(r.Next(0, 10));
+                Console.WriteLine("{0} Listeye eklendi.", sayilar[i]);
+            }
+            Console.WriteLine();
+
+            // Listedeki benzersiz elemanları bulmak.
+            var benzersizler = new SortedSet<int>(sayilar);
+
+            Console.WriteLine();
+            Console.WriteLine("\nBenzersiz sayiların listesi: ");
+            foreach (var item in benzersizler)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            Console.WriteLine(benzersizler.Count);
+        }
+
+        private static void SortedSetBasics()
+        {
+            // SortedSet
+
+            // Tanımlama
+            var list = new SortedSet<string>();
+
+            // Ekleme
+            if (list.Add("Mehmet"))
+            {
+                Console.WriteLine("Mehmet Eklendi.");
+            }
+            else
+            {
+                Console.WriteLine("Ekleme Başarısız.");
+            }
+
+            Console.WriteLine("{0}", list.Add("Ahmet") == true ?
+              "Ahmet Eklendi." : "Ekleme Başarısız.");
+
+            // Burada eklenmediği için her elemanın benzersiz olması gerektiğini anladık.
+            if (list.Add("Mehmet"))
+            {
+                Console.WriteLine("Mehmet Eklendi.");
+            }
+            else
+            {
+                Console.WriteLine("Ekleme Başarısız.");
+            }
+
+            list.Add("Salim");
+            list.Add("Rahim");
+            list.Add("Ufuk");
+            list.Add("Yunus");
+
+            list.Remove("Ufuk");
+            //list.RemoveWhere(deger => deger.Contains("A"));
+            list.RemoveWhere(deger => deger.StartsWith("M"));
+
+            Console.WriteLine("\nİsimler Listesi: ");
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            Console.WriteLine("Eleman sayısı :{0,3}", list.Count);
+        }
+
         private static void SortedDictionaryExamples()
         {
             var bookIndex = new SortedDictionary<string, List<int>>()
