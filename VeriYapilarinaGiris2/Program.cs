@@ -13,6 +13,127 @@ namespace VeriYapilarinaGiris2
             Console.ReadKey();
         }
 
+        private static void SortedDictionaryExamples()
+        {
+            var bookIndex = new SortedDictionary<string, List<int>>()
+            {
+                {"HTML", new List<int>(){8,10,12} },
+                {"CSS", new List<int>(){78,170,212} },
+                {"JQuery", new List<int>(){77,155,130} },
+                {"SQL", new List<int>(){80,100} },
+
+            };
+            bookIndex.Add("FTP", new List<int>() { 3, 5, 7 });
+            bookIndex.Add("ASP.NET", new List<int>() { 50, 60 });
+
+            foreach (var item in bookIndex)
+            {
+                Console.WriteLine(item.Key);
+                item.Value.ForEach(x => Console.WriteLine("\t>" + x));
+
+                //Console.WriteLine(item.Value);
+
+                //foreach (int s in item.Value)
+                //{
+                //    Console.WriteLine($" > {s} pp");
+                //}
+
+
+            }
+        }
+
+        private static void DictionaryWithPersonel()
+        {
+            // Dictionary
+            var personelListesi = new Dictionary<int, Personel>()
+            {
+                {110, new Personel("Arif", "Kalaycı",40000) },
+                {120, new Personel("Rayim","Işık",100000) }
+            };
+            personelListesi.Add(100, new Personel("Salim", "Şahin", 30000));
+            foreach (var item in personelListesi)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void DictionaryBasics()
+        {
+            // Dictionary
+            // Tanımlama
+            var telefonkodlari = new Dictionary<int, string>()
+            {
+                {661, "Trabzon" }
+            };
+
+            // Ekleme
+            telefonkodlari.Add(322, "Adana");
+            telefonkodlari.Add(212, "Samsun");
+            telefonkodlari.Add(216, "İstanbul");
+            telefonkodlari.Add(222, "Samsun");
+
+            // Erişim
+            telefonkodlari[222] = "İzmir";
+
+            // ContainsKey
+            if (!telefonkodlari.ContainsKey(312))
+            {
+                Console.WriteLine("\aAnkara'Nın kod bilgisi tanımlı değil");
+                telefonkodlari.Add(312, "Ankara");
+                Console.WriteLine("Yeni kod eklendi.");
+            }
+
+
+            // ContainsValue
+            if (!telefonkodlari.ContainsValue("Erzincan"))
+            {
+                Console.WriteLine("\aErzincan için kod bilgisi tanımlı değil.");
+                telefonkodlari.Add(422, "Erzincan");
+                Console.WriteLine("Yeni kod eklendi.");
+            }
+
+
+            foreach (var item in telefonkodlari)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void LinkedListExamples()
+        {
+            // LinkedList<T> Temelleri
+            // Tanımlama
+            var sehirler = new LinkedList<string>();
+            sehirler.AddFirst("Samsun");
+            sehirler.AddFirst("Trabzon");
+            sehirler.AddLast("İstanbul");
+
+            sehirler.AddAfter(sehirler.Find("Samsun"), "Sinop");
+            sehirler.AddBefore(sehirler.First.Next.Next.Next, "Kocaeli");
+            sehirler.AddBefore(sehirler.Last.Previous, "Zonguldak");
+
+            //foreach (var item in sehirler)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            Console.WriteLine("\nGidiş Güzergahı\n ");
+            var eleman = sehirler.First;
+            while (eleman != null)
+            {
+                Console.WriteLine(eleman.Value);
+                eleman = eleman.Next;
+            }
+
+            Console.WriteLine("\nDönüş Güzergahı\n ");
+            var elemans = sehirler.Last;
+            while (elemans != null)
+            {
+                Console.WriteLine(elemans.Value);
+                elemans = elemans.Previous;
+            }
+        }
+
         private static void QUEUEExamples1()
         {
             // QUEUE EXAMPLES
