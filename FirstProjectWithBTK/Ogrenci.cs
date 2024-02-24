@@ -1,5 +1,14 @@
 ﻿public struct Ogrenci
 {
+    
+
+    // property özellik tanımlama prob tab tab
+    public int Number { get; set; }
+    public string Name { get; set; }
+    public string LastName { get; set; }
+    public bool Gender { get; set; }
+
+
     // yapılandırıcı metod CONSTRUCTOR
     public Ogrenci(int number, string name, string lastName, bool gender = true)
     {
@@ -9,11 +18,6 @@
         Gender = gender;
     }
 
-    // property özellik tanımlama prob tab tab
-    public int Number { get; set; }
-    public string Name { get; set; }
-    public string LastName { get; set; }
-    public bool Gender { get; set; }
 
     // geçersiz kılma , ezme , override
     public override string ToString()

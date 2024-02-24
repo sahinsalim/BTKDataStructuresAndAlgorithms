@@ -2,6 +2,14 @@
 {
     public class Personel
     {
+        
+
+        public int SicilNo { get; set; }
+        public string Adi { get; set; }
+        public string Soyadi { get; set; }
+        public decimal Maas { get; set; }
+
+
         public Personel(string adi, string soyadi, decimal maas)
         {
             Adi = adi;
@@ -9,10 +17,6 @@
             Maas = maas;
         }
 
-        public int SicilNo { get; set; }
-        public string Adi { get; set; }
-        public string Soyadi { get; set; }
-        public decimal Maas { get; set; }
 
         public override string ToString()
         {

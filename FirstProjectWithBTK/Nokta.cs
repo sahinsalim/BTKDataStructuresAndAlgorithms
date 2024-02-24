@@ -3,10 +3,7 @@
     public int X { get; set; }
     public int Y { get; set; }
 
-    public override string ToString()
-    {
-        return $"{X}, {Y}";
-    }
+   
 
     // default ctor
     public Nokta(int x, int y)
@@ -48,6 +45,11 @@
         Console.WriteLine($"n2: {n2}");
         Console.ReadKey();
     */
+
+    public override string ToString()
+    {
+        return $"{X}, {Y}";
+    }
 
 
 }

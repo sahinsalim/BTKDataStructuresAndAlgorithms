@@ -2,14 +2,16 @@
 {
     public class Sehir : IComparable<Sehir>
     {
+       
+        public int PlakaNo { get; set; }
+        public string SehirAdi { get; set; }
+
+
         public Sehir(int plakaNo, string sehirAdi)
         {
             PlakaNo = plakaNo;
             SehirAdi = sehirAdi;
         }
-
-        public int PlakaNo { get; set; }
-        public string SehirAdi { get; set; }
 
         public int CompareTo(Sehir? other)
         {
