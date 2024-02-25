@@ -1,8 +1,8 @@
-﻿namespace VeriYapilarinaGiris2
+﻿namespace VeriYapilarinaGiris2.Class
 {
     public class Personel
     {
-        
+
 
         public int SicilNo { get; set; }
         public string Adi { get; set; }
@@ -20,7 +20,7 @@
 
         public override string ToString()
         {
-            return $"{Adi,-10} {Soyadi, -15} {Maas,-10}";
+            return $"{Adi,-10} {Soyadi,-15} {Maas,-10}";
         }
     }
 }

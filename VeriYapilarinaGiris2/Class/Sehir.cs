@@ -1,8 +1,8 @@
-﻿namespace VeriYapilarinaGiris2
+﻿namespace VeriYapilarinaGiris2.Class
 {
     public class Sehir : IComparable<Sehir>
     {
-       
+
         public int PlakaNo { get; set; }
         public string SehirAdi { get; set; }
 
@@ -15,13 +15,13 @@
 
         public int CompareTo(Sehir? other)
         {
-            if (this.PlakaNo < other.PlakaNo)
+            if (PlakaNo < other.PlakaNo)
                 return -1;
-            else if (this.PlakaNo == other.PlakaNo)
+            else if (PlakaNo == other.PlakaNo)
                 return 0;
             else
                 return 1;
-        }       
+        }
 
         public override string ToString()
         {

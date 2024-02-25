@@ -1,10 +1,10 @@
 ﻿using System.Collections;
+using VeriYapilarinaGiris2.Class;
 
 namespace VeriYapilarinaGiris2
 {
     public class VeriYapilariExamples
     {
-
         private static void ListAndIComparable()
         {
             // List & IComparable
